@@ -100,6 +100,7 @@ enum print_reason {
 #define BBC_CHARGER_VOTER		"BBC_CHARGER_VOTER"
 #define QC2_UNSUPPORTED_VOTER		"QC2_UNSUPPORTED_VOTER"
 #define THERMAL_FCC_OVERRIDE_VOTER  "THERMAL_FCC_OVERRIDE_VOTER"
+#define BYPASS_VOTER			"BYPASS_VOTER"
 /* use for QC3P5 */
 #define QC3P5_VOTER			"QC3P5_VOTER"
 #define FCC_MAX_QC3P5_VOTER		"FCC_MAX_QC3P5_VOTER"
@@ -704,6 +705,7 @@ struct smb_charger {
 	/* secondary charger config */
 	bool			sec_pl_present;
 	bool			sec_cp_present;
+	bool			thermal_remove;
 	int			sec_chg_selected;
 	int			cp_reason;
 	int			cp_topo;
