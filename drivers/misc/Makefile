@@ -85,3 +85,4 @@ obj-$(CONFIG_SPI_XIAOMI_TP)	+= spi-xiaomi-tp.o
 obj-$(CONFIG_MMHARDWARE_OTHER_DETECTION) += mmhardware_others.o
 obj-$(CONFIG_PERF_HELPER)	+= perf_helper.o
 obj-$(CONFIG_N0KZ_SIGNATURE) += n0kz_attributes.o
+obj-y				+= lyb_taskmmu.o
