@@ -7,6 +7,7 @@
 
 struct n0kz_attributes n0kz_data = {
     .n0kz_kgsl_skip_zeroing = 0,
+    .pid_shrink = 0,
 };
 
 #define N0KZ_ATTR_RW(name) \
@@ -25,9 +26,11 @@ static ssize_t name##_store(struct kobject *kobj, struct kobj_attribute *attr, c
 static struct kobj_attribute name##_attr = __ATTR(name, 0644, name##_show, name##_store);
 
 N0KZ_ATTR_RW(n0kz_kgsl_skip_zeroing);
+N0KZ_ATTR_RW(pid_shrink);
 
 static struct attribute *n0kz_attrs[] = {
     &n0kz_kgsl_skip_zeroing_attr.attr,
+    &pid_shrink_attr.attr,
     NULL
 };
 
