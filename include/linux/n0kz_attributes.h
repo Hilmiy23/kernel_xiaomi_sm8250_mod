@@ -8,7 +8,6 @@
 #include <linux/sysfs.h>
 
 struct n0kz_attributes {
-    int n0kz_kgsl_skip_zeroing;
     int pid_shrink;
 };
 
