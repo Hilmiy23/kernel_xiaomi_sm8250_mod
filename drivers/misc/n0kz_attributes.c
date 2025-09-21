@@ -6,7 +6,6 @@
 #include <linux/n0kz_attributes.h>
 
 struct n0kz_attributes n0kz_data = {
-    .n0kz_kgsl_skip_zeroing = 0,
     .pid_shrink = 0,
 };
 
@@ -25,11 +24,9 @@ static ssize_t name##_store(struct kobject *kobj, struct kobj_attribute *attr, c
 } \
 static struct kobj_attribute name##_attr = __ATTR(name, 0644, name##_show, name##_store);
 
-N0KZ_ATTR_RW(n0kz_kgsl_skip_zeroing);
 N0KZ_ATTR_RW(pid_shrink);
 
 static struct attribute *n0kz_attrs[] = {
-    &n0kz_kgsl_skip_zeroing_attr.attr,
     &pid_shrink_attr.attr,
     NULL
 };
@@ -63,4 +60,4 @@ module_exit(n0kz_attributes_exit);
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("kvsnr113 <kvsnrprojkt113@gmail.com>");
-MODULE_DESCRIPTION("N0KZ kgsl skip zeroing attribute module");
+MODULE_DESCRIPTION("N0KZ attribute module");
