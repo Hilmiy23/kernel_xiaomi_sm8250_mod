@@ -4442,12 +4442,7 @@ retry:
 
 		/* retry pages that may have missed rotate_reclaimable_page() */
 		list_move(&page->lru, &clean);
-#ifdef CONFIG_TRANSPARENT_HUGEPAGE
-    sc->nr_scanned -= thp_nr_pages(page);
-#else
-    sc->nr_scanned -= 1;  /* fallback as we don't have THP present */
-#endif
-
+		sc->nr_scanned -= thp_nr_pages(page);
 	}
 
 	spin_lock_irq(&pgdat->lru_lock);
