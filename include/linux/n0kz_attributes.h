@@ -9,6 +9,7 @@
 
 struct n0kz_attributes {
     int pid_shrink;
+    int file_sync;
 };
 
 extern struct n0kz_attributes n0kz_data;

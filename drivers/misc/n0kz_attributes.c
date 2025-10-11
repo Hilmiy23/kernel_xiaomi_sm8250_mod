@@ -7,6 +7,7 @@
 
 struct n0kz_attributes n0kz_data = {
     .pid_shrink = 0,
+    .file_sync = 1,
 };
 
 #define N0KZ_ATTR_RW(name) \
@@ -25,9 +26,11 @@ static ssize_t name##_store(struct kobject *kobj, struct kobj_attribute *attr, c
 static struct kobj_attribute name##_attr = __ATTR(name, 0644, name##_show, name##_store);
 
 N0KZ_ATTR_RW(pid_shrink);
+N0KZ_ATTR_RW(file_sync);
 
 static struct attribute *n0kz_attrs[] = {
     &pid_shrink_attr.attr,
+    &file_sync_attr.attr,
     NULL
 };
 
